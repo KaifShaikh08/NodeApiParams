@@ -48,3 +48,4 @@ export const DeleteUser = async (req, res) => {
     Message: "Deleted",
   });
 };
+export const CrudOperation = "Crud";
