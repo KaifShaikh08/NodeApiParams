@@ -1,11 +1,11 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
 //Connecting to MongoDb
 export const connectDB = () => {
   mongoose
     .connect(process.env.MONOG_URI, {
-      dbName: "backendapi",
+      dbName: "formapi",
     })
     .then((e) => console.log("Database is running"))
-    .catch((e) => console.log(e));
-};
+    .catch((e) => console.log("Database is not running"))
+}
