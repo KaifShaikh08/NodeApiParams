@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 //Connecting to MongoDb
 export const connectDB = () => {
@@ -7,5 +7,5 @@ export const connectDB = () => {
       dbName: "formapi",
     })
     .then((e) => console.log("Database is running"))
-    .catch((e) => console.log("Database is not running"))
-}
+    .catch((e) => console.log("Database is not running"));
+};

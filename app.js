@@ -1,20 +1,22 @@
-import express from "express"
-import userRouter from "./Routes/user.js"
-import { config } from "dotenv"
-import cookieParser from "cookie-parser"
+import express from "express";
+import userRouter from "./Routes/user.js";
+import taskRouter from "./Routes/task.js";
+import { config } from "dotenv";
+import cookieParser from "cookie-parser";
 
-export const app = express()
+export const app = express();
 
 config({
   path: "./data/config.env",
-})
+});
 
 //Using Middleware
-app.use(express.json())
-app.use(cookieParser())
-app.use("/api/v1/users", userRouter)
+app.use(express.json());
+app.use(cookieParser());
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/tasks", taskRouter);
 
 //Get Method
 app.get("/", (req, res) => {
-  res.send("Nice")
-})
+  res.send("Nice");
+});

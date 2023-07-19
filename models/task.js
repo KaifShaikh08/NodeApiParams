@@ -22,6 +22,11 @@ const UserScheema = mongoose.Schema({
     ref: "user",
     required: true,
   },
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 //Creating User in Database

@@ -1,20 +1,22 @@
-import express from "express"
+import express from "express";
 import {
   getAllUser,
   registerUser,
   loginUser,
   GetMyProfile,
-} from "../controller/user.js"
-import { isAuthenticated } from "../middlewares/auth.js"
+  logoutUser,
+} from "../controller/user.js";
+import { isAuthenticated } from "../middlewares/auth.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/all", getAllUser)
+router.get("/all", getAllUser);
 
-router.get("/me", isAuthenticated, GetMyProfile)
+router.get("/me", isAuthenticated, GetMyProfile);
 
 //Post Method
-router.post("/register", registerUser)
-router.post("/login", loginUser)
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/logout", logoutUser);
 
-export default router
+export default router;
