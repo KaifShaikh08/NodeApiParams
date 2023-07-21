@@ -3,6 +3,7 @@ import userRouter from "./Routes/user.js";
 import taskRouter from "./Routes/task.js";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middlewares/error.js";
 
 export const app = express();
 
@@ -20,3 +21,5 @@ app.use("/api/v1/tasks", taskRouter);
 app.get("/", (req, res) => {
   res.send("Nice");
 });
+
+app.use(errorMiddleware);

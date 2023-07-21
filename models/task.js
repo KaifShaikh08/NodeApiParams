@@ -30,4 +30,4 @@ const UserScheema = mongoose.Schema({
 });
 
 //Creating User in Database
-export const task = mongoose.model("task", UserScheema);
+export const Task = mongoose.model("task", UserScheema);
