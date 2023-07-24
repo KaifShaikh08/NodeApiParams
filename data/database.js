@@ -6,6 +6,6 @@ export const connectDB = () => {
     .connect(process.env.MONOG_URI, {
       dbName: "formapi",
     })
-    .then((e) => console.log("Database is running"))
-    .catch((e) => console.log("Database is not running"));
+    .then((c) => console.log(`Database is connected ${c.connection.host}`))
+    .catch((e) => console.log("Database is not connected"));
 };
