@@ -5,6 +5,7 @@ import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import { errorMiddleware } from "./middlewares/error.js";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 export const app = express();
 
@@ -22,6 +23,9 @@ app.use(
     credentials: true,
   })
 );
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/tasks", taskRouter);
 
