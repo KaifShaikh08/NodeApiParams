@@ -7,5 +7,7 @@ export const connectDB = () => {
       dbName: "formapi",
     })
     .then((c) => console.log(`Database is connected ${c.connection.host}`))
-    .catch((e) => console.log("Database is not connected"));
+    .catch((error) =>
+      console.log(`error while connecting database  , ${error}`)
+    );
 };
